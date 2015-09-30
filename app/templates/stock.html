@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+  
+{% block content %}
+<h2>{{symbol}}</h2>
+<p> 
+<ul>
+	<li>Name: {{ stock.data_set["Name"] }}
+	<li>Symbol:  {{ stock.symbol.upper() }} 
+	<li>Exchange:  {{ stock.data_set["StockExchange"] }}
+	<li>Price: ${{ stock.data_set["LastTradePriceOnly"] }} 
+	<li>Open: ${{ stock.data_set["Open"] }}
+	<li>Percentage change: {{ stock.data_set["PercentChange"] }}
+	<li>Day's Range: ${{ stock.data_set["DaysRange"] }}
+	<li>50-day moving average: ${{ stock.data_set["FiftydayMovingAverage"] }}
+	<li>200-day moving average: ${{ stock.data_set["TwoHundreddayMovingAverage"] }}
+	<li>52 week high: ${{ stock.data_set["YearHigh"] }}
+	<li>52 week low: ${{ stock.data_set["YearLow"] }}
+	<li>Price/earnings: ${{ stock.data_set["PERatio"] }}
+	<li>Volume: {{ stock.data_set["Volume"] }}
+	<li>Average Daily Volume: {{ stock.data_set["AverageDailyVolume"] }}
+	<li>Dividend yield: {{ stock.data_set["DividendYield"] }}%
+	<li>Dividend Pay date: {{ stock.data_set["DividendPayDate"] }}
+	<li>Ex dividend date: {{ stock.data_set["ExDividendDate"] }}
+	<li>Dividend Share: {{ stock.data_set["DividendShare"] }}
+	<li>Market Cap: {{ stock.data_set["MarketCapitalization"] }}
+</ul>
+</p>
+
+{% endblock %}
